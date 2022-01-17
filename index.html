@@ -86,8 +86,10 @@
             document.getElementById('divCalculadora').style.cssText = 'transform: scale(1);transition: all 0.4s;';
             document.getElementById('caixa').style.cssText = 'display:none';
         }
-        var operacao = ""
-        var numEx = "123456789"
+        
+        var operacao = " "
+        var numEx = "0123456789"
+        var lastCh = NaN
 
             function addZero(){operacao+="0"}
             function addUm(){operacao+="1"}
