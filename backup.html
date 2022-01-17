@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+        html{background-color: rgb(189, 189, 189)}   
+        
+        #caixa{display:flex ;flex-wrap: wrap; flex-direction:row; width: 90%; height: 500px; background-color: blue; margin: auto auto; justify-content: space-around; align-items: center;}
+        .iconesMenu{display:flex; border-radius: 100%; background-color: yellow; width: 180px; height: 180px; justify-content: center; margin: 25px;}
+
+        #divCalculadora{width: 480px; margin:40px auto;transform: scale(0.00);}
+        #Calculadora{width: 100%;}
+
+        .botoes{background: transparent;  z-index: 5; position: absolute; top: 40%; left: 50%;}
+        .botoes:hover{filter: brightness(90%);}
+        .botoes:active{filter: brightness(50%);}
+        #textoBot{position: absolute;top: 49%; left: 50%; transform: translate(-50%, -50%); font-family: 'Roboto', sans-serif; font-size:xx-large ; color: white;}
+
+            #num1{transform: translate(-205%, -29%); border:none}
+            #num2{transform: translate(-103%, -29%); border:none}
+            #num3{transform: translate(3%, -29%); border:none}
+            #num4{transform: translate(108%, -29%); border:none}
+
+            #num5{transform: translate(-205%, 90%); border:none}
+            #num6{transform: translate(-103%, 90%); border:none}
+            #num7{transform: translate(3%, 90%); border:none}
+            #num8{transform: translate(108%, 90%); border:none}
+
+            #num9{transform: translate(-205%, 209%); border:none}
+            #num10{transform: translate(-103%, 209%); border:none}
+            #num11{transform: translate(3%, 209%); border:none}
+            #num12{transform: translate(108%, 209%); border:none}
+
+            #num13{transform: translate(-205%, 325%); border:none}
+            #num14{transform: translate(-103%, 325%); border:none}
+            #num15{transform: translate(3%, 325%); border:none}
+            #num16{transform: translate(108%, 325%); border:none}
+            
+    </style>
+
+</head>
+<body>
+
+<div id="caixa">
+    <div class="iconesMenu"><img src="calculadora.png" onclick="abrirCalculadora()" width="75%" height="75%" style="margin-top: 18px;"></div>
+    <div class="iconesMenu"><img src="calculadora.png" width="75%" height="75%" style="margin-top: 18px;"></div>
+    <div class="iconesMenu"><img src="calculadora.png" width="75%" height="75%" style="margin-top: 18px;"></div>
+    <div class="iconesMenu"><img src="calculadora.png" width="75%" height="75%" style="margin-top: 18px;"></div>
+    <div class="iconesMenu"><img src="calculadora.png" width="75%" height="75%" style="margin-top: 18px;"></div>
+    <div class="iconesMenu"><img src="calculadora.png" width="75%" height="75%" style="margin-top: 18px;"></div>
+    <div class="iconesMenu"><img src="calculadora.png" width="75%" height="75%" style="margin-top: 18px;"></div>
+    <div class="iconesMenu"><img src="calculadora.png" width="75%" height="75%" style="margin-top: 18px;"></div>
+    
+</div>
+
+<div id="divCalculadora">
+        <div id="botoes">
+            <button class ="botoes" id="num1"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">+</div></button>
+            <button class ="botoes" id="num2"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">-</div></button>
+            <button class ="botoes" id="num3"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">X</div></button>
+            <button class ="botoes" id="num4"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">÷</div></button>
+
+            <button class ="botoes" id="num5"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">1</div></button>
+            <button class ="botoes" id="num6"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">2</div></button>
+            <button class ="botoes" id="num7"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">3</div></button>
+            <button class ="botoes" id="num8"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">0</div></button>
+
+            <button class ="botoes" id="num9"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">4</div></button>
+            <button class ="botoes" id="num10"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">5</div></button>
+            <button class ="botoes" id="num11"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">6</div></button>
+            <button class ="botoes" id="num12"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">C</div></button>
+
+            <button class ="botoes" id="num13"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">7</div></button>
+            <button class ="botoes" id="num14"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">8</div></button>
+            <button class ="botoes" id="num15"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">9</div></button>
+            <button class ="botoes" id="num16"><img draggable="false" src="botao2.png" width="47px"><div id="textoBot">=</div></button>
+        </div>
+    <img id="Calculadora" draggable="false" src="calculadora.png">
+</div>
+</body>
+
+    <script>
+        function abrirCalculadora(){
+            document.getElementById('divCalculadora').style.cssText = 'transform: scale(1);transition: all 0.4s;';
+            document.getElementById('caixa').style.cssText = 'display:none';
+        }
+    </script>
+
+</html>
