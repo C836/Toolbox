@@ -4,123 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-
-        html{background-color: rgb(189, 189, 189)}   
-        
-        #caixa{display:flex ;flex-wrap: wrap; flex-direction:row; width: 90%; height: 500px; margin: auto auto; justify-content: space-around; align-items: center;}
-        .iconesMenu{display:flex; border-radius: 100%; background-color: yellow; width: 180px; height: 180px; justify-content: center; margin: 25px;}
-
-        #divCalculadora{width: 480px; margin:40px auto;transform: scale(0.00);}
-        #Calculadora{width: 100%;}
-
-        .botoes{background: transparent;  z-index: 5; position: absolute; top: 40%; left: 50%;}
-        .botoes:hover{filter: brightness(90%);}
-        .botoes:active{filter: brightness(50%);}
-        #textoBot{position: absolute;top: 49%; left: 50%; transform: translate(-50%, -50%); font-family: 'Roboto', sans-serif; font-size:xx-large ; color: white;}
-
-            #num1{transform: translate(-205%, -29%); border:none}
-            #num2{transform: translate(-103%, -29%); border:none}
-            #num3{transform: translate(3%, -29%); border:none}
-            #num4{transform: translate(108%, -29%); border:none}
-
-            #num5{transform: translate(-205%, 90%); border:none}
-            #num6{transform: translate(-103%, 90%); border:none}
-            #num7{transform: translate(3%, 90%); border:none}
-            #num8{transform: translate(108%, 90%); border:none}
-
-            #num9{transform: translate(-205%, 209%); border:none}
-            #num10{transform: translate(-103%, 209%); border:none}
-            #num11{transform: translate(3%, 209%); border:none}
-            #num12{transform: translate(108%, 209%); border:none}
-
-            #num13{transform: translate(-205%, 325%); border:none}
-            #num14{transform: translate(-103%, 325%); border:none}
-            #num15{transform: translate(3%, 325%); border:none}
-            #num16{transform: translate(108%, 325%); border:none}
-            
-    </style>
-
+    <title>Toolbox</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="circle"></div>
 
 <h1 id="operacao"></h1>
 
 <div id="caixa">
-    <div class="iconesMenu"><img src="calculadora.png" onclick="abrirCalculadora()" width="75%" height="75%" style="margin-top: 18px;"></div>
-    
+    <div class="iconesMenu"><img src="calculadora.png" onclick="abrirCalculadora()" width="75%" height="75%" style="margin-top: 18px;"></div></div>
 </div>
 
 <div id="divCalculadora">
+    <div id="displayBox">
+        <p id="display"></p>
+    </div>
         <div id="botoes">
-            <button class ="botoes" id="num1" onclick="addSoma();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">+</div></button>
-            <button class ="botoes" id="num2" onclick="addSub();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">-</div></button>
-            <button class ="botoes" id="num3" onclick="addMult();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">X</div></button>
-            <button class ="botoes" id="num4" onclick="addDiv();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">÷</div></button>
+            <button class ="botoes" id="num1" onclick="check();addSoma();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">+</div></button>
+            <button class ="botoes" id="num2" onclick="check();addSub();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">-</div></button>
+            <button class ="botoes" id="num3" onclick="check();addMult();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">X</div></button>
+            <button class ="botoes" id="num4" onclick="check();addDiv();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">÷</div></button>
 
-            <button class ="botoes" id="num5" onclick="addUm();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">1</div></button>
-            <button class ="botoes" id="num6" onclick="addDois();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">2</div></button>
-            <button class ="botoes" id="num7" onclick="addTres();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">3</div></button>
-            <button class ="botoes" id="num8" onclick="addZero();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">0</div></button>
+            <button class ="botoes" id="num5" onclick="check();addUm();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">1</div></button>
+            <button class ="botoes" id="num6" onclick="check();addDois();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">2</div></button>
+            <button class ="botoes" id="num7" onclick="check();addTres();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">3</div></button>
+            <button class ="botoes" id="num8" onclick="check();addZero();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">0</div></button>
 
-            <button class ="botoes" id="num9" onclick="addQuatro();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">4</div></button>
-            <button class ="botoes" id="num10" onclick="addCinco();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">5</div></button>
-            <button class ="botoes" id="num11" onclick="addSeis();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">6</div></button>
+            <button class ="botoes" id="num9" onclick="check();addQuatro();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">4</div></button>
+            <button class ="botoes" id="num10" onclick="check();addCinco();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">5</div></button>
+            <button class ="botoes" id="num11" onclick="check();addSeis();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">6</div></button>
             <button class ="botoes" id="num12" onclick="Clear();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">C</div></button>
 
-            <button class ="botoes" id="num13" onclick="addSete();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">7</div></button>
-            <button class ="botoes" id="num14" onclick="addOito();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">8</div></button>
-            <button class ="botoes" id="num15" onclick="addNove();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">9</div></button>
-            <button class ="botoes" id="num16" onclick="Equal();refresh()"><img draggable="false" src="botao2.png" width="47px"><div id="textoBot">=</div></button>
+            <button class ="botoes" id="num13" onclick="check();addSete();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">7</div></button>
+            <button class ="botoes" id="num14" onclick="check();addOito();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">8</div></button>
+            <button class ="botoes" id="num15" onclick="check();addNove();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">9</div></button>
+            <button class ="botoes" id="num16" onclick="check();Equal();refresh()"><img draggable="false" src="botao2.png" width="47px"><div id="textoBot">=</div></button>
         </div>
     <img id="Calculadora" draggable="false" src="calculadora.png">
 </div>
 </body>
 
-    <script>
-
-        function abrirCalculadora(){
-            document.getElementById('divCalculadora').style.cssText = 'transform: scale(1);transition: all 0.4s;';
-            document.getElementById('caixa').style.cssText = 'display:none';
-        }
-        
-        var operacao = " "
-        var numEx = "0123456789"
-        var lastCh = NaN
-
-            function addZero(){operacao+="0"}
-            function addUm(){operacao+="1"}
-            function addDois(){operacao+="2"}
-            function addTres(){operacao+="3"}
-            function addQuatro(){operacao+="4"}
-            function addCinco(){operacao+="5"}
-            function addSeis(){operacao+="6"}
-            function addSete(){operacao+="7"}
-            function addOito(){operacao+="8"}
-            function addNove(){operacao+="9"}
-
-            function addSoma(){lastCh = operacao.charAt(operacao.length - 1)
-                if (numEx.indexOf(lastCh)>-1){operacao+="+"}}
-
-            function addSub(){lastCh = operacao.charAt(operacao.length - 1)
-                if (numEx.indexOf(lastCh)>-1){operacao+="-"}}
-
-            function addMult(){lastCh = operacao.charAt(operacao.length - 1)
-                if (numEx.indexOf(lastCh)>-1){operacao+="*"}}
-
-            function addDiv(){lastCh = operacao.charAt(operacao.length - 1)
-                if (numEx.indexOf(lastCh)>-1){operacao+="/"}}
-
-            function Clear(){lastCh = operacao.charAt(operacao.length - 1)
-                if (numEx.indexOf(lastCh)>0){operacao+=""}}
-                
-            function Equal(){lastCh = operacao.charAt(operacao.length - 1)
-                if (numEx.indexOf(lastCh)>0){operacao+=""}}
-            
-        function refresh(){document.getElementById('operacao').innerHTML=operacao;}
-    </script>
+    <script src=script.js></script>
 
 </html>
