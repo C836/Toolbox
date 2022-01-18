@@ -13,7 +13,6 @@ var lastCh = NaN
 var excep = false
 var maxChar = true
 
-
     function addZero(){
         if (maxChar==true){operacao+="0"}}
     function addUm(){
@@ -50,9 +49,9 @@ var maxChar = true
 
     function Clear(){operacao=" "}
         
-    function Equal(){operacao=eval(operacao);excep=true}
+    function Equal(){operacao=eval(operacao)+"";excep=true; }
     
 function refresh(){document.getElementById('display').innerHTML=operacao; 
-        if (operacao.length>9){document.getElementById('display').style.cssText=`font-size: ${210/operacao.length*2}px;`}
+        if (operacao.length>8){document.getElementById('display').style.cssText=`font-size: ${200/operacao.length*2}px;`}
             else {document.getElementById('display').style.cssText=`font-size: 50px;`}}
         
