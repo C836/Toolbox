@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');  
 #background{position: fixed; width: 100% ; height:100% ;object-fit: cover; z-index: -10;}
 
-#caixa{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; margin: auto auto; justify-content: space-around; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: -10; border-radius: 50px; box-shadow:  0 0 3em rgba(0, 0, 0, 0.5)}
-.iconesMenu{display:flex; border-radius: 100%; min-width: 180px; height: 180px; justify-content: center; margin: 25px; box-shadow:  0 0 3em rgba(0, 0, 0, 1); cursor: pointer;}
+#caixa{position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; justify-content: space-around;  background-color: rgba(0, 0, 0, 0.5); z-index: -10; border-radius: 50px; box-shadow:  0 0 3em rgba(0, 0, 0, 0.5)}
+.iconesMenu{display:flex; transform: scale(1);border-radius: 100%; min-width: 180px; height: 180px; justify-content: center; margin: 15px; box-shadow:  0 0 3em rgba(0, 0, 0, 1); cursor: pointer;}
 .iconInfo{position: absolute; opacity: 0; transition: All 0.2s;background-color: rgba(0, 0, 0, 0.7); border-radius: 50%; width: 180px; height: 180px;}
     .infoText{font: 20px Roboto, sans-serif; color: white; text-align: center; padding-top: 70px; letter-spacing: 1px;}
     .iconInfo:hover{opacity: 1}
@@ -78,4 +78,4 @@
 
     #divCalculadora{zoom:60%}
 }
-#credit{text-decoration: none;margin-bottom:10px;text-align: center;width: 100%;position:fixed;z-index:10 ;bottom: 0 ;font: 16px Roboto, sans-serif; font-weight:400;color: white; text-shadow: 0px 0px 12px black, 0px 0px 12px black;; }
+#credit{text-decoration: none;margin-bottom:10px;text-align: center;width: 100%;position:fixed;z-index:1 ;bottom: 0 ;font: 16px Roboto, sans-serif; font-weight:400;color: white; text-shadow: 0px 0px 12px black, 0px 0px 12px black;; }
