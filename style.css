@@ -53,22 +53,28 @@ html{background-color: rgb(0, 0, 0)}
     .sinal{margin: 0 15px 15px 15px; padding: 8px; width: 36px; float: left; border-radius: 10px; cursor: pointer; border: none; background-color: rgba(0, 0, 0, 0.2); color: white;}
     .numBox{margin: 0 15px 15px 0; padding: 8px; display: inline-block; border-radius: 5px; border: none; width: 38px; background-color:rgba(0, 0, 0, 0.2); color: white; }
 
-    @media (max-width: 900px){
+        @media (max-width: 900px){
+            #decoderBox{width: 50px}
+            #divDecoder{height: 910px; width: 450px;}
+            #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
+            #divDireita{float:none ;margin: 35px 15px 0px 0px;}
+
+            #divCalculadora{zoom:85%}
+        }
+
+    @media (max-width: 600px){
         #decoderBox{width: 50px}
-        #divDecoder{height: 910px; width: 450px;}
+        #divDecoder{height: 910px; width: 450px; zoom: 75%;}
         #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
         #divDireita{float:none ;margin: 35px 15px 0px 0px;}
-    }
 
-@media (max-width: 600px){
-    #decoderBox{width: 50px}
-    #divDecoder{height: 910px; width: 450px; zoom: 750%;}
-    #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
-    #divDireita{float:none ;margin: 35px 15px 0px 0px;}
-}
+        #divCalculadora{zoom:70%}
+    }
 @media (max-width: 400px){
     #decoderBox{width: 50px}
     #divDecoder{height: 910px; width: 450px; zoom: 50%;}
     #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
     #divDireita{float:none ;margin: 35px 15px 0px 0px;}
+
+    #divCalculadora{zoom:55%}
 }
