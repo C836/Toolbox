@@ -1,22 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');  
-
-#caixa{position: absolute; top: 50%; width: 50%;left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; margin: auto auto; justify-content: space-around; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: -10; border-radius: 50px; box-shadow:  0 0 3em rgba(0, 0, 0, 0.5)}
-.iconesMenu{display:flex; border-radius: 100%; width: 180px; height: 180px; justify-content: center; margin: 25px; box-shadow:  0 0 3em rgba(0, 0, 0, 1)}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');  
 #background{position: fixed; width: 100% ; height:100% ;object-fit: cover; z-index: -10;}
 
-#circle{width: 100vw; height: 100vw; position: fixed; z-index: -10; top: 50%; transform: translate(0, -50%) scale(0); border-radius: 100%; z-index: 4; min-height: 100%}
-#imgcircle{opacity: 0; transition: all 3s}
+#caixa{position: absolute; top: 50%; width: 60%;left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; margin: auto auto; justify-content: space-around; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: -10; border-radius: 50px; box-shadow:  0 0 3em rgba(0, 0, 0, 0.5)}
+.iconesMenu{display:flex; border-radius: 100%; width: 180px; height: 180px; justify-content: center; margin: 25px; box-shadow:  0 0 3em rgba(0, 0, 0, 1); cursor: pointer;}
+.iconInfo{position: absolute; opacity: 0; transition: All 0.2s;background-color: rgba(0, 0, 0, 0.7); border-radius: 50%; width: 180px; height: 180px;}
+    .infoText{font: 20px Roboto, sans-serif; color: white; text-align: center; padding-top: 70px; letter-spacing: 1px;}
+    .iconInfo:hover{opacity: 1}
 
+#circle{width: 100vw; height: 100vw; position: fixed; z-index: -10; top: 50%; transform: translate(0, -50%) scale(0); border-radius: 100%; z-index: 4; min-height: 100%}
+#imgcircle{opacity: 0; transition: all 3s; object-fit: contain;}
 
     #divCalculadora{position:absolute; width: 480px; margin:60px; transform: scale(0.00);margin-left: auto; margin-right: auto; left: 0; right: 0; z-index: 5;}
     #Calculadora{width: 100%;}
     #displayBox{position:absolute;width: 240px; height: 75px; margin-left: auto; margin-right: auto;left: 0;right: 0; top: 52px; overflow: auto;}
-    #display{margin: 0; position: absolute; top: 50%; right:1px ;transform: translate(0, -50%); font-size: 50px; font-family: 'Roboto', sans-serif; text-align-last: right; color:white}
+    #display{margin: 0; position: absolute; top: 50%; right:1px ;transform: translate(0, -50%); font: 50px 'Roboto', sans-serif; font-weight:700; text-align-last: right; color:white}
 
 .botoes{background: transparent;  z-index: 6; position: absolute; top: 40%; left: 50%;}
 .botoes:hover{filter: brightness(90%);}
 .botoes:active{filter: brightness(50%);}
-#textoBot{position: absolute;top: 49%; left: 50%; transform: translate(-50%, -50%); font-family: 'Roboto', sans-serif; font-size:xx-large ; color: white;}
+#textoBot{position: absolute;top: 49%; left: 50%; transform: translate(-50%, -50%); font-family: 'Roboto', sans-serif; font-size:xx-large ; color: white;font-weight:700;}
 
     #num1{transform: translate(-205%, -29%); border:none}
     #num2{transform: translate(-103%, -29%); border:none}
@@ -76,3 +78,4 @@
 
     #divCalculadora{zoom:60%}
 }
+#credit{text-decoration: none;margin-bottom:10px;text-align: center;width: 100%;position:fixed;z-index:10 ;bottom: 0 ;font: 16px Roboto, sans-serif; font-weight:400;color: white; text-shadow: 0px 0px 12px black, 0px 0px 12px black;; }
