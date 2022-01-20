@@ -14,7 +14,7 @@ html{background-color: rgb(0, 0, 0)}
     #displayBox{position:absolute;width: 240px; height: 75px; margin-left: auto; margin-right: auto;left: 0;right: 0; top: 52px; overflow: auto;}
     #display{margin: 0; position: absolute; top: 50%; right:1px ;transform: translate(0, -50%); font-size: 50px; font-family: 'Roboto', sans-serif; text-align-last: right; color:white}
 
-.botoes{background: transparent;  z-index: 5; position: absolute; top: 40%; left: 50%;}
+.botoes{background: transparent;  z-index: 6; position: absolute; top: 40%; left: 50%;}
 .botoes:hover{filter: brightness(90%);}
 .botoes:active{filter: brightness(50%);}
 #textoBot{position: absolute;top: 49%; left: 50%; transform: translate(-50%, -50%); font-family: 'Roboto', sans-serif; font-size:xx-large ; color: white;}
