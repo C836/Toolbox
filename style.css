@@ -59,7 +59,6 @@ html{background-color: rgb(0, 0, 0)}
             #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
             #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 
-            #divCalculadora{zoom:85%}
         }
 
     @media (max-width: 600px){
@@ -68,7 +67,7 @@ html{background-color: rgb(0, 0, 0)}
         #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
         #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 
-        #divCalculadora{zoom:70%}
+        #divCalculadora{zoom:80%}
     }
 @media (max-width: 400px){
     #decoderBox{width: 50px}
@@ -76,5 +75,5 @@ html{background-color: rgb(0, 0, 0)}
     #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
     #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 
-    #divCalculadora{zoom:55%}
+    #divCalculadora{zoom:60%}
 }
