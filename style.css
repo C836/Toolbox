@@ -54,7 +54,7 @@ html{background-color: rgb(0, 0, 0)}
     .numBox{margin: 0 15px 15px 0; padding: 8px; display: inline-block; border-radius: 5px; border: none; width: 38px; background-color:rgba(0, 0, 0, 0.2); color: white; }
 
 @media (max-width: 1000px){
-    #divDecoder{height: 910px; width: 450px; transform: scale (0.5);}
+    #divDecoder{height: 910px; width: 450px; zoom: 75%;}
     #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
     #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 }
