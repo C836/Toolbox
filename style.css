@@ -40,7 +40,7 @@ html{background-color: rgb(0, 0, 0)}
     #num16{transform: translate(108%, 325%); border:none}
 
 #divDecoder{background-color: rgba(0, 0, 0, 0.2); border-radius: 40px; position:absolute; width: 900px; height: 490px; margin:40px auto;margin-left: auto; margin-right: auto; left: 0; right: 0; z-index: 5; transform: scale(0.00); box-shadow:  0 0 3em black}
-#decoderBox{display:inline; width: 850px; height: 450px; margin: 25px}
+#decoderBox{width: 850px; height: 450px; margin: 25px}
 
 .divBox{width:387px; height: 400px; background-color:rgba(0, 0, 0, 0.2); padding: 5px; border-radius: 30px}
 #divEsquerda{float:left ; margin: 15px 15px 0px 15px;}
@@ -54,6 +54,7 @@ html{background-color: rgb(0, 0, 0)}
     .numBox{margin: 0 15px 15px 0; padding: 8px; display: inline-block; border-radius: 5px; border: none; width: 38px; background-color:rgba(0, 0, 0, 0.2); color: white; }
 
 @media (max-width: 800px){
+    #decoderBox{width: 50px}
     #divDecoder{height: 910px; width: 450px; zoom: 50%;}
     #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
     #divDireita{float:none ;margin: 35px 15px 0px 0px;}
