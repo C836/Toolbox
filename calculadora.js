@@ -48,16 +48,10 @@ var maxChar = true
 
     function Clear(){operacao=" "}
         
-    function Equal(){operacao=eval(operacao)+"";excep=true; }
+    function Equal(){operacao=Math.round((eval(operacao))*100)/100;+"";excep=true; }
     
 function refresh(){document.getElementById('display').innerHTML=operacao; 
         if (operacao.length>8){document.getElementById('display').style.cssText=`font-size: ${200/operacao.length*2}px;`}
             else {document.getElementById('display').style.cssText=`font-size: 50px;`}}
-/* =========== DECODER ========= */
-
-function abrirDecoder(){
-    document.getElementById('divDecoder').style.cssText = 'transform: scale(1);transition: all 0.4s;';
-    document.getElementById('circle').style.cssText = 'transform: translate(0, -50%) scale(1);transition: border-radius 0.4s,transform 0.4s; border-radius: 0%; background-color: #3964c0';
-}
 
         

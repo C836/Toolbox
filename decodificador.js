@@ -4,12 +4,15 @@ function abrirDecoder(){
     setTimeout(() => {document.getElementById('imgcircle').style.cssText="opacity: 1"}, 1000);
 }
 
+/*DECLARAÇÃO DOS VALORES*/
 var inputBox=""
 var inputSplit=[]
 var tabela=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var resultArray=[]
 var codeNumBox=0
 var decodeNumBox=0
+
+/*CHECAR SE CESAR ESTA SELECIONADO*/
 
 function codeCheck(){
     if (document.getElementById("codeTipo").value==="cesar"){
@@ -33,6 +36,8 @@ function decodeCheck(){
         document.getElementById("decodeBut").style.cssText=""}
 }
 
+/*TROCAR O BOTÃO + POR - NO CLIQUE*/
+
 function toggleCodeBut(){
     botao=document.getElementById("sinal")
     if (botao.innerHTML==="+"){botao.innerHTML="-"}
@@ -44,31 +49,38 @@ function toggleDecodeBut(){
     else {botao.innerHTML="+"}
 }
 
+/*CODIFICAR
+codetipo = caixa de seleção (cesar/base64)
+numbox = número de incremento
+codebox = caixa de texto
+sinal = + ou -
+codebut = botão para ativar a função
+*/
 function code(){
-    var passCode=[]
+    var passCode=[] /*DECLARAR */
 
-    if (document.getElementById("codeTipo").value==="cesar"){ 
-        codeNumBox=Number(document.getElementById('numBox').value)
+    if (document.getElementById("codeTipo").value==="cesar"){  /* VERIFICA SE O VALOR DA SELEÇÃO É CESAR */
+        codeNumBox=Number(document.getElementById('numBox').value)  /*VAI PEGAR O NÚMERO DE INCREMENTO E ARMAZENAR NUMA VARIAVEL*/
         
-        inputBox=document.getElementById("codeBox").value;        
-        inputSplit=inputBox.split(""); 
+        inputBox=document.getElementById("codeBox").value;  /* VAI ARMAZENAR O TEXTO DE CODIFICAÇÃO NUMA VARIAVEL */
+        inputSplit=inputBox.split("");  /* VAI DIVIDIR CADA LETRA DO TEXTO EM UM ARRAY*/
 
-            for (var i=0; i<inputSplit.length; i++){
-                if (inputSplit[i]===" "){resultArray.push(" ");continue} 
+            for (var i=0; i<inputSplit.length; i++){ /*LOOP*/
+                if (inputSplit[i]===" "){resultArray.push(" ");continue}  /* SE O CARACTERE SELECIONADO FOR ESPAÇO, VAI IGNORAR E IR PARA O PRÓXIMO ELEMENTO*/
                 else {
-                    passCode[i]=tabela.indexOf(inputSplit[i])
+                    passCode[i]=tabela.indexOf(inputSplit[i]) /* SE NAO FOR ESPAÇO, VAI PROCURAR O CARACTERE SELECIONADO NA TABELA E ARMAZENAR SUA POSIÇÃO NUMA VARIAVEL*/
                     /*Mais*/
-                if (document.getElementById("sinal").innerHTML==="+"){
-                    if (passCode[i]+codeNumBox>25){inputSplit[i]=tabela[passCode[i]+codeNumBox-26]; continue}
-                        else {inputSplit[i]=tabela[passCode[i]+codeNumBox]}
+                if (document.getElementById("sinal").innerHTML==="+"){  /* SE O SINAL FOR + */
+                    if (passCode[i]+codeNumBox>25){inputSplit[i]=tabela[passCode[i]+codeNumBox-26]; continue} /* CASO O RESULTADO FOR MAIOR QUE 25, SUBTRAI 26 E CONTINUA O LOOP NORMALMENTE*/
+                        else {inputSplit[i]=tabela[passCode[i]+codeNumBox]} /* VAI SUBSTITUIR O CARACTERE SELECIONADO ANTERIORMENTE PELA POSIÇÃO CORRESPONDENTE NA TABELA + O NUMERO DE INCREMENTO*/
                     }
                     /*Menos*/
-                else if (document.getElementById("sinal").innerHTML==="-"){
-                    if (passCode[i]-codeNumBox<0){inputSplit[i]=tabela[passCode[i]-codeNumBox+26]; continue}
-                        else {inputSplit[i]=tabela[passCode[i]-codeNumBox]}}}}
+                else if (document.getElementById("sinal").innerHTML==="-"){ /*  SE O SINAL FOR - */
+                    if (passCode[i]-codeNumBox<0){inputSplit[i]=tabela[passCode[i]-codeNumBox+26]; continue} /* CASO O RESULTADO FOR MENOR QUE 25, SOMA 26 E CONTINUA O LOOP NORMALMENTE*/
+                        else {inputSplit[i]=tabela[passCode[i]-codeNumBox]}}}} /* VAI SUBSTITUIR O CARACTERE SELECIONADO ANTERIORMENTE PELA POSIÇÃO CORRESPONDENTE NA TABELA - O NUMERO DE INCREMENTO*/
 
-            document.getElementById("decodeBox").value=inputSplit.join("")
-            document.getElementById("codeBox").value="" }
+            document.getElementById("decodeBox").value=inputSplit.join("") /* RETIRAR AS VIRGULAS DO ARRAY E JOGAR NA CAIXA OPOSTA*/
+            document.getElementById("codeBox").value="" } 
 
     else if (document.getElementById("codeTipo").value==="base64") {
         inputBox=document.getElementById("codeBox").value;        
@@ -76,6 +88,7 @@ function code(){
         document.getElementById("codeBox").value="" }
     }
 
+/*DECODIFICAR*/
 function decode(){
     var passCode=[]
 

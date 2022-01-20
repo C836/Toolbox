@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');  
 
-html{background-color: rgb(0, 0, 0)}   
-
-#caixa{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; width: 80%; height: 500px; margin: auto auto; justify-content: space-around; align-items: center; background-color: yellow; z-index: -10;}
-.iconesMenu{display:flex; border-radius: 100%; width: 180px; height: 180px; justify-content: center; margin: 25px;}
+#caixa{position: absolute; top: 50%; width: 50%;left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; margin: auto auto; justify-content: space-around; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: -10; border-radius: 50px; box-shadow:  0 0 3em rgba(0, 0, 0, 0.5)}
+.iconesMenu{display:flex; border-radius: 100%; width: 180px; height: 180px; justify-content: center; margin: 25px; box-shadow:  0 0 3em rgba(0, 0, 0, 1)}
+#background{position: fixed; width: 100% ; height:100% ;object-fit: cover; z-index: -10;}
 
 #circle{width: 100vw; height: 100vw; position: fixed; z-index: -10; top: 50%; transform: translate(0, -50%) scale(0); border-radius: 100%; z-index: 4; min-height: 100%}
 #imgcircle{opacity: 0; transition: all 3s}
