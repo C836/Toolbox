@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="circle"></div>
-
-<h1 id="operacao"></h1>
+<div id="circle"><img src=back.png id="imgcircle" height=100% style="position: fixed; z-index: -10; "></div>
 
 <div id="caixa">
-    <div class="iconesMenu"><img src="calculadora.png" onclick="abrirCalculadora()" width="75%" height="75%" style="margin-top: 18px;"></div></div>
+    <div class="iconesMenu" style="background-color: rgb(189, 189, 189)"><img src="calculadora.png" onclick="abrirCalculadora()" width="75%" height="75%" style="margin-top: 22px;"></div>
+    <div class="iconesMenu" style="background-color: #3964c0"><img src="decoder.png" onclick="abrirDecoder()" width="75%" height="75%" style="margin-top: 23px;"></div>
 </div>
 
 <div id="divCalculadora">
+    <p class="tituloApp">AUANANAI</p>
     <div id="displayBox">
         <p id="display"></p>
     </div>
@@ -44,8 +44,38 @@
         </div>
     <img id="Calculadora" draggable="false" src="calculadora.png">
 </div>
+<div id="divDecoder">
+    <div id=decoderBox>
+        <div id="divEsquerda" class="divBox">
+            <div class=select>
+                <select onchange="codeCheck()" class="tipo" id="codeTipo">
+                    <option>Selecione a linguagem</option>
+                    <option value="base64">Base64</option>
+                    <option value="cesar">Cifra de César</option>
+                </select>
+            </div>
+            <textarea class="inputBox" id="codeBox"></textarea>
+            <button id="sinal" class="sinal" style="display: none;" onclick="toggleCodeBut()">+</button>
+            <input type="number" min=-25 max=25 class="numBox" id="numBox" style="display: none;">
+            <button id="codeBut" onclick="code()" class="decBotoes">Codificar</button>
+        </div>
+
+        <div id=divDireita class="divBox">
+            <div class="select">
+                <select onchange="decodeCheck()" class="tipo" id="decodeTipo">
+                    <option>Selecione a linguagem</option>
+                    <option value="base64">Base64</option>
+                    <option value="cesar">Cifra de César</option>
+                </select>
+            </div>
+            <textarea type="text" class="inputBox" id="decodeBox"></textarea>
+            <button id="decoSinal" class="sinal" style="display: none;" onclick="toggleDecodeBut()">+</button>
+            <input type="number" min=-25 max=25 class="numBox" id="decoNumBox" size="1" style="display: none;">
+            <button id=decodeBut onclick="decode()" class="decBotoes">Decodificar</button>
+        </div>
+    </div>
+</div>
 </body>
-
-    <script src=script.js></script>
-
+    <script src=calculadora.js></script>
+    <script src=decodificador.js></script>
 </html>

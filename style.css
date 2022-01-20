@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-html{background-color: rgb(255, 255, 255)}   
+html{background-color: rgb(0, 0, 0)}   
 
-#caixa{position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; width: 100%; height: 500px; margin: auto auto; justify-content: space-around; align-items: center;}
-.iconesMenu{display:flex; border-radius: 100%; background-color: rgb(189, 189, 189); width: 180px; height: 180px; justify-content: center; margin: 25px;}
+#caixa{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; width: 80%; height: 500px; margin: auto auto; justify-content: space-around; align-items: center; background-color: yellow; z-index: -10;}
+.iconesMenu{display:flex; border-radius: 100%; width: 180px; height: 180px; justify-content: center; margin: 25px;}
 
-#circle{width: 100vw; height: 100vw; position: fixed; background-color: rgb(189, 189, 189); z-index: -10; top: 50%; transform: translate(0, -50%) scale(0); border-radius: 100%;}
+#circle{width: 100vw; height: 100vw; position: fixed; z-index: -10; top: 50%; transform: translate(0, -50%) scale(0); border-radius: 100%; z-index: 4; min-height: 100%}
+#imgcircle{opacity: 0; transition: all 3s}
+.tituloApp{}
 
-#divCalculadora{position:absolute; width: 480px; margin:40px auto;transform: scale(0.00);margin-left: auto; margin-right: auto; left: 0; right: 0;}
-#Calculadora{width: 100%;}
-#displayBox{position:absolute;width: 240px; height: 75px; margin-left: auto; margin-right: auto;left: 0;right: 0; top: 52px; overflow: auto;}
-#display{margin: 0; position: absolute; top: 50%; right:1px ;transform: translate(0, -50%); font-size: 50px; font-family: 'Roboto', sans-serif; text-align-last: right; color:white}
+    #divCalculadora{position:absolute; width: 480px; margin:60px; transform: scale(0.00);margin-left: auto; margin-right: auto; left: 0; right: 0; z-index: 5;}
+    #Calculadora{width: 100%;}
+    #displayBox{position:absolute;width: 240px; height: 75px; margin-left: auto; margin-right: auto;left: 0;right: 0; top: 52px; overflow: auto;}
+    #display{margin: 0; position: absolute; top: 50%; right:1px ;transform: translate(0, -50%); font-size: 50px; font-family: 'Roboto', sans-serif; text-align-last: right; color:white}
 
 .botoes{background: transparent;  z-index: 5; position: absolute; top: 40%; left: 50%;}
 .botoes:hover{filter: brightness(90%);}
@@ -36,3 +38,23 @@ html{background-color: rgb(255, 255, 255)}
     #num14{transform: translate(-103%, 325%); border:none}
     #num15{transform: translate(3%, 325%); border:none}
     #num16{transform: translate(108%, 325%); border:none}
+
+#divDecoder{background-color: rgba(0, 0, 0, 0.2); border-radius: 40px; position:absolute; width: 900px; height: 490px; margin:40px auto;margin-left: auto; margin-right: auto; left: 0; right: 0; z-index: 5; transform: scale(0.00); box-shadow:  0 0 3em black}
+#decoderBox{width: 850px; height: 450px; margin: 25px}
+
+.divBox{width:387px; height: 400px; background-color:rgba(0, 0, 0, 0.2); padding: 5px; border-radius: 30px}
+#divEsquerda{float:left ; margin: 15px 15px 0px 15px;}
+#divDireita{float: right; margin: 15px 15px 15px 0;}
+    .tipo{width:357px; padding: 8px; margin: 15px 15px 15px 15px; border-radius: 5px; font: 14px Roboto, sans-serif; background-color: rgba(0, 0, 0, 0.2); border: none; color: white;}
+        option{background-color: #2d4d91;}
+            
+    .inputBox{width: 357px; height:265px ;margin: 0 15px 15px 15px; resize: none; box-sizing: border-box; border-radius: 5px; background-color: rgba(0, 0, 0, 0.2); border: none; color: white; padding: 10px; font-size: 15px; }
+    .decBotoes{width: 357px; padding: 8px; margin: 0 15px 15px 15px; border-radius: 10px; font: 14px Roboto, sans-serif; border: none; cursor: pointer;} 
+    .sinal{margin: 0 15px 15px 15px; padding: 8px; width: 36px; float: left; border-radius: 10px; cursor: pointer; border: none; background-color: rgba(0, 0, 0, 0.2); color: white;}
+    .numBox{margin: 0 15px 15px 0; padding: 8px; display: inline-block; border-radius: 5px; border: none; width: 38px; background-color:rgba(0, 0, 0, 0.2); color: white; }
+
+@media (max-width: 1000px){
+    #divDecoder{height: 910px; width: 450px; transform: scale (0.5);}
+    #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
+    #divDireita{float:none ;margin: 35px 15px 0px 0px;}
+}
