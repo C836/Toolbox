@@ -12,6 +12,10 @@
 
 <img src="background.jpg" id="background">
 
+<div id=divLogo>
+    <img src="toolbox.png" id="logoImg"><p id=logoTexto>Toolbox</p>
+</div>
+
 <div id="circle"><img src=back.png id="imgcircle" height=100% style="position: fixed; z-index: -10; "></div>
 
 <div id="caixa">
@@ -21,11 +25,7 @@
     <div class="iconesMenu" style="background-color: #3964c0">
         <div class=iconInfo onclick="abrirDecoder()"><div class="infoText" style="padding-top: 76px; font-size: 18px;"> Decodificador</div></div><img src="decoder.png"  width="75%" height="75%" style="margin-top: 23px;">
     </div>
-    <div class="iconesMenu" style="background-color: #3964c0">
-        <div class=iconInfo onclick="abrirDecoder()"><div class="infoText" style="padding-top: 76px; font-size: 18px;"> Decodificador</div></div><img src="decoder.png"  width="75%" height="75%" style="margin-top: 23px;">
-    </div>
-    
-    
+
 </div>
 
 <div id="divCalculadora">
@@ -86,8 +86,11 @@
         </div>
     </div>
 </div>
-<a href="https://github.com/C836" id="credit">por Gabriel Lopes - 2022</a>
+<p onclick="link()" id="credit">por Gabriel Lopes - 2022</p>
 </body>
+    <script>function link(){
+            window.open("https://github.com/C836", "_blank");
+        }</script>
     <script src=calculadora.js></script>
     <script src=decodificador.js></script>
 </html>
