@@ -1,10 +1,15 @@
-function abrirDecoder(){
+function abrirDecoder(){  /* ABRIR DO MENU (IGNORE)*/
     document.getElementById('divDecoder').style.cssText = 'transform: scale(1);transition: all 0.4s;';
-    document.getElementById('circle').style.cssText = 'transform: translate(0, -50%) scale(1);transition: border-radius 0.4s,transform 0.4s; border-radius: 0%; background-color: #3964c0';
-    setTimeout(() => {document.getElementById('imgcircle').style.cssText="opacity: 1"}, 1000);
+    document.getElementById('circle2').style.cssText = 'transform: translate(0, -50%) scale(1);transition: border-radius 0.4s,transform 0.4s; border-radius: 0%; background-color: #3964c0';
+    timeout=setTimeout(function(){document.getElementById('imgDecoder').style.cssText="opacity: 1"}, 500);
+}
+function fecharDecoder(){
+    document.getElementById('circle2').style.cssText = 'transform: translate(0, -53%) scale(0);transition: border-radius 0.4s,transform 0.4s; border-radius: 100%;background-color: #3964c0'
+    document.getElementById('imgDecoder').style.cssText="opacity:0;transition: opacity 0s;"  
+    document.getElementById('divDecoder').style.cssText = 'transform: scale(0);transition: all 0.4s;';
+    clearTimeout(timeout);
 }
 
-/*DECLARAÇÃO DOS VALORES*/
 var inputBox=""
 var inputSplit=[]
 var tabela=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -15,38 +20,46 @@ var decodeNumBox=0
 /*CHECAR SE CESAR ESTA SELECIONADO*/
 
 function codeCheck(){
-    if (document.getElementById("codeTipo").value==="cesar"){
-        document.getElementById("sinal").style.cssText="display:inline"
-        document.getElementById("numBox").style.cssText="display:inline"
-        document.getElementById("codeBut").style.cssText="width:235px; float:right; margin: 0 15px 15px 0;"
+    codeTipo=document.getElementById("codeTipo")
+    sinal=document.getElementById("sinal")
+    numBox=(document.getElementById("numBox"))
+    codeBut=document.getElementById("codeBut")
+
+    if (codeTipo.value==="cesar"){
+        sinal.style.cssText="display:inline"
+        numBox.style.cssText="display:inline"
+        codeBut.style.cssText="width:235px; float:right; margin: 0 15px 15px 0;"
     } else {
-        document.getElementById("sinal").style.cssText="display:none"
-        document.getElementById("numBox").style.cssText="display:none"
-        document.getElementById("codeBut").style.cssText=""}
+        sinal.style.cssText="display:none"
+        numBox.style.cssText="display:none"
+        codeBut.style.cssText=""}
 }
 
 function decodeCheck(){
-    if (document.getElementById("decodeTipo").value==="cesar"){
-        document.getElementById("decoSinal").style.cssText="display:inline"
-        document.getElementById("decoNumBox").style.cssText="display:inline"
-        document.getElementById("decodeBut").style.cssText="width:235px; float:right; margin: 0 15px 15px 0;"
+    decodeTipo=document.getElementById("decodeTipo")
+    decoSinal=document.getElementById("decoSinal")
+    decoNumBox=document.getElementById("decoNumBox")
+    decodeBut=document.getElementById("decodeBut")
+
+    if (decodeTipo.value==="cesar"){
+        decoSinal.style.cssText="display:inline"
+        decoNumBox.style.cssText="display:inline"
+        decodeBut.style.cssText="width:235px; float:right; margin: 0 15px 15px 0;"
     } else {
-        document.getElementById("decoSinal").style.cssText="display:none"
-        document.getElementById("decoNumBox").style.cssText="display:none"
-        document.getElementById("decodeBut").style.cssText=""}
+        decoSinal.style.cssText="display:none"
+        decoNumBox.style.cssText="display:none"
+        decodeBut.style.cssText=""}
 }
 
 /*TROCAR O BOTÃO + POR - NO CLIQUE*/
 
 function toggleCodeBut(){
-    botao=document.getElementById("sinal")
-    if (botao.innerHTML==="+"){botao.innerHTML="-"}
-    else {botao.innerHTML="+"}
+    if (sinal.innerHTML==="+"){sinal.innerHTML="-"}
+    else {sinal.innerHTML="+"}
 }
 function toggleDecodeBut(){
-    botao=document.getElementById("decoSinal")
-    if (botao.innerHTML==="+"){botao.innerHTML="-"}
-    else {botao.innerHTML="+"}
+    if (decoSinal.innerHTML==="+"){decoSinal.innerHTML="-"}
+    else {decoSinal.innerHTML="+"}
 }
 
 /*CODIFICAR
@@ -57,10 +70,10 @@ sinal = + ou -
 codebut = botão para ativar a função
 */
 function code(){
-    var passCode=[] /*DECLARAR */
+    codeNumBox=Number(document.getElementById("numBox").value)
+    passCode=[]
 
-    if (document.getElementById("codeTipo").value==="cesar"){  /* VERIFICA SE O VALOR DA SELEÇÃO É CESAR */
-        codeNumBox=Number(document.getElementById('numBox').value)  /*VAI PEGAR O NÚMERO DE INCREMENTO E ARMAZENAR NUMA VARIAVEL*/
+    if (codeTipo.value==="cesar"){  /* VERIFICA SE O VALOR DA SELEÇÃO É CESAR */
         
         inputBox=document.getElementById("codeBox").value;  /* VAI ARMAZENAR O TEXTO DE CODIFICAÇÃO NUMA VARIAVEL */
         inputSplit=inputBox.split("");  /* VAI DIVIDIR CADA LETRA DO TEXTO EM UM ARRAY*/
@@ -70,19 +83,19 @@ function code(){
                 else {
                     passCode[i]=tabela.indexOf(inputSplit[i]) /* SE NAO FOR ESPAÇO, VAI PROCURAR O CARACTERE SELECIONADO NA TABELA E ARMAZENAR SUA POSIÇÃO NUMA VARIAVEL*/
                     /*Mais*/
-                if (document.getElementById("sinal").innerHTML==="+"){  /* SE O SINAL FOR + */
+                if (sinal.innerHTML==="+"){  /* SE O SINAL FOR + */
                     if (passCode[i]+codeNumBox>25){inputSplit[i]=tabela[passCode[i]+codeNumBox-26]; continue} /* CASO O RESULTADO FOR MAIOR QUE 25, SUBTRAI 26 E CONTINUA O LOOP NORMALMENTE*/
                         else {inputSplit[i]=tabela[passCode[i]+codeNumBox]} /* VAI SUBSTITUIR O CARACTERE SELECIONADO ANTERIORMENTE PELA POSIÇÃO CORRESPONDENTE NA TABELA + O NUMERO DE INCREMENTO*/
                     }
                     /*Menos*/
-                else if (document.getElementById("sinal").innerHTML==="-"){ /*  SE O SINAL FOR - */
+                else if (sinal.innerHTML==="-"){ /*  SE O SINAL FOR - */
                     if (passCode[i]-codeNumBox<0){inputSplit[i]=tabela[passCode[i]-codeNumBox+26]; continue} /* CASO O RESULTADO FOR MENOR QUE 25, SOMA 26 E CONTINUA O LOOP NORMALMENTE*/
                         else {inputSplit[i]=tabela[passCode[i]-codeNumBox]}}}} /* VAI SUBSTITUIR O CARACTERE SELECIONADO ANTERIORMENTE PELA POSIÇÃO CORRESPONDENTE NA TABELA - O NUMERO DE INCREMENTO*/
 
             document.getElementById("decodeBox").value=inputSplit.join("") /* RETIRAR AS VIRGULAS DO ARRAY E JOGAR NA CAIXA OPOSTA*/
             document.getElementById("codeBox").value="" } 
 
-    else if (document.getElementById("codeTipo").value==="base64") {
+    else if (codeTipo.value==="base64") {
         inputBox=document.getElementById("codeBox").value;        
         document.getElementById("decodeBox").value=btoa(inputBox)
         document.getElementById("codeBox").value="" }
@@ -90,10 +103,10 @@ function code(){
 
 /*DECODIFICAR*/
 function decode(){
-    var passCode=[]
+    decodeNumBox=Number(document.getElementById("decoNumBox").value)
+    passCode=[]
 
-    if (document.getElementById("decodeTipo").value==="cesar"){ 
-        decodeNumBox=Number(document.getElementById('decoNumBox').value)
+    if (decodeTipo.value==="cesar"){ 
         
         inputBox=document.getElementById("decodeBox").value;        
         inputSplit=inputBox.split(""); 
@@ -103,12 +116,12 @@ function decode(){
                 else {
                     passCode[i]=tabela.indexOf(inputSplit[i])
                     /*Mais*/
-                if (document.getElementById("decoSinal").innerHTML==="+"){
+                if (decoSinal.innerHTML==="+"){
                     if (passCode[i]+decodeNumBox>25){inputSplit[i]=tabela[passCode[i]+decodeNumBox-26]; continue}
                         else {inputSplit[i]=tabela[passCode[i]+decodeNumBox]}
                     }
                     /*Menos*/
-                else if (document.getElementById("decoSinal").innerHTML==="-"){
+                else if (decoSinal.innerHTML==="-"){
                     if (passCode[i]-decodeNumBox<0){inputSplit[i]=tabela[passCode[i]-decodeNumBox+26]; continue}
                         else {inputSplit[i]=tabela[passCode[i]-decodeNumBox]}}}}
 

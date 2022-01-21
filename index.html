@@ -16,7 +16,9 @@
     <img src="toolbox.png" id="logoImg"><p id=logoTexto>Toolbox</p>
 </div>
 
-<div id="circle"><img src=back.png id="imgcircle" height=100% style="position: fixed; z-index: -10; "></div>
+<div id="circle1" onclick="fecharCalculadora()"><img src=backcalc.png id="imgCalc" height=100% style="position: fixed; z-index: -10; "></div>
+    
+<div id="circle2" onclick="fecharDecoder()"><img src=back.png id="imgDecoder" height=100% style="position: fixed; z-index: -10; "></div>
 
 <div id="caixa">
     <div class="iconesMenu" style="background-color: rgb(189, 189, 189)">
@@ -97,9 +99,10 @@
 
 <p onclick="link()" id="credit">por Gabriel Lopes - 2022</p>
 </body>
-    <script>function link(){
-            window.open("https://github.com/C836", "_blank");
-        }</script>
+    <script>
+    function link(){
+        window.open("https://github.com/C836", "_blank")}
+    </script>
     <script src=calculadora.js></script>
     <script src=decodificador.js></script>
 </html>

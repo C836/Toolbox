@@ -1,10 +1,16 @@
-function check(){if (operacao.length > 25){maxChar=false} else {maxChar=true}}
-
 function abrirCalculadora(){
     document.getElementById('divCalculadora').style.cssText = 'transform: scale(1) ;transition: all 0.4s;';
-    document.getElementById('circle').style.cssText = 'transform: translate(0, -50%) scale(1);transition: border-radius 0.4s,transform 0.4s; border-radius: 0%; background-color: rgb(189, 189, 189)';
-    setTimeout(() => {document.getElementById('imgcircle').style.cssText="opacity: 1;filter: saturate(0);"}, 1000);
+    document.getElementById('circle1').style.cssText = 'transform: translate(0, -50%) scale(1);transition: border-radius 0.4s,transform 0.4s; border-radius: 0%; background-color: rgb(189, 189, 189)';
+    timeout=setTimeout(function(){document.getElementById('imgCalc').style.cssText="opacity: 1"}, 500);
 }
+function fecharCalculadora(){
+    document.getElementById('circle1').style.cssText = 'transform: translate(0, -53%) scale(0);transition: border-radius 0.4s,transform 0.4s; border-radius: 100%;background-color: rgb(189, 189, 189)'
+    document.getElementById('imgCalc').style.cssText="opacity:0;transition: opacity 0s;"  
+    document.getElementById('divCalculadora').style.cssText = 'transform: scale(0);transition: all 0.4s;';
+    clearTimeout(timeout);
+}
+
+function check(){if (operacao.length > 25){maxChar=false} else {maxChar=true}}
 
 var operacao = " "
 var numEx = "0123456789"
