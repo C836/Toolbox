@@ -91,7 +91,7 @@
     #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
     #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 
-    #divCalculadora{zoom:60%}
+    #divCalculadora{zoom:70%}
     #caixa{width: 90%; transform: translate(-50%, -50%) scale(0.6)}
     .iconesMenu{transform: scale(0.7); margin:0px ;}
     #divLogo{transform: translate(-50%, -30%) scale(0.4);}
