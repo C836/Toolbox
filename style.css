@@ -58,6 +58,8 @@
     .sinal{margin: 0 15px 15px 15px; padding: 8px; width: 36px; float: left; border-radius: 10px; cursor: pointer; border: none; background-color: rgba(0, 0, 0, 0.2); color: white;}
     .numBox{margin: 0 15px 15px 0; padding: 8px; display: inline-block; border-radius: 5px; border: none; width: 38px; background-color:rgba(0, 0, 0, 0.2); color: white; }
 
+#credit{display:inline;text-decoration: none;margin-bottom:10px;position:fixed;z-index:1 ;bottom: 0 ;font: 16px Roboto, sans-serif; font-weight:400;color: white; text-shadow: 0px 0px 12px black, 0px 0px 12px black; cursor: pointer; left: 50%;transform: translateX(-50%)}
+
         @media (max-width: 900px){
             #decoderBox{width: 50px}
             #divDecoder{height: 910px; width: 450px;}
@@ -77,9 +79,11 @@
 
         #divCalculadora{zoom:80%}
         
-        #caixa{width: 80%;}
+        #caixa{width: 80%; transform:translate(-50%, -50%) scale(0.9)}
         .iconesMenu{transform: scale(0.8); margin:10px ;}
         #divLogo{transform: translate(-50%, -20%) scale(0.6);}
+
+        #credit{font-size: 14px;}
     }
 @media (max-width: 400px){
     #decoderBox{width: 50px}
@@ -88,8 +92,9 @@
     #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 
     #divCalculadora{zoom:60%}
-    #caixa{width: 90%;}
+    #caixa{width: 90%; transform: translate(-50%, -50%) scale(0.8)}
     .iconesMenu{transform: scale(0.65); margin:0px ;}
     #divLogo{transform: translate(-50%, -20%) scale(0.6);}
+
+    #credit{font-size: 12px;}
 }
-#credit{display:inline;text-decoration: none;margin-bottom:10px;position:fixed;z-index:1 ;bottom: 0 ;font: 16px Roboto, sans-serif; font-weight:400;color: white; text-shadow: 0px 0px 12px black, 0px 0px 12px black; cursor: pointer; left: 50%;transform: translateX(-50%)}
