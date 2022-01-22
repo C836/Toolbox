@@ -5,27 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toolbox</title>
+    <link rel="icon" href="imagens/toolbox.png"> 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<img src="background.jpg" id="background">
+<img src="imagens/background.jpg" draggable="false" id="background">
 
 <div id=divLogo>
-    <img src="toolbox.png" id="logoImg"><p id=logoTexto>Toolbox</p>
+    <img src="imagens/toolbox.png" draggable="false"  id="logoImg"><p id=logoTexto>Toolbox</p>
 </div>
 
-<div id="circle1" onclick="fecharCalculadora()"><img src=backcalc.png id="imgCalc" height=100% style="position: fixed; z-index: -10; "></div>
+<div id="circle1" onclick="fecharCalculadora()"><img src=imagens/backcalc.png id="imgCalc" draggable="false" height=100% style="position: fixed; z-index: -10; "></div>
     
-<div id="circle2" onclick="fecharDecoder()"><img src=back.png id="imgDecoder" height=100% style="position: fixed; z-index: -10; "></div>
+<div id="circle2" onclick="fecharDecoder()"><img src=imagens/back.png draggable="false" id="imgDecoder" height=100% style="position: fixed; z-index: -10; "></div>
 
 <div id="caixa">
     <div class="iconesMenu" style="background-color: rgb(189, 189, 189)">
-        <div class=iconInfo onclick="abrirCalculadora()"><div class="infoText">Calculadora</br>Simples</div></div><img src="calculadora.png" width="75%" height="75%" style="margin-top: 22px;">
+        <div class=iconInfo onclick="abrirCalculadora()"><div class="infoText">Calculadora</br>Simples</div></div><img src="imagens/calculadora.png" draggable="false" width="75%" height="75%" style="margin-top: 22px;">
     </div>
     <div class="iconesMenu" style="background-color: #3964c0">
-        <div class=iconInfo onclick="abrirDecoder()"><div class="infoText" style="padding-top: 76px; font-size: 18px;"> Decodificador</div></div><img src="decoder.png"  width="75%" height="75%" style="margin-top: 23px;">
+        <div class=iconInfo onclick="abrirDecoder()" ><div class="infoText" style="padding-top: 76px; font-size: 18px;"> Decodificador</div></div><img src="imagens/decoder.png" draggable="false"  width="75%" height="75%" style="margin-top: 23px;">
     </div>
 
 </div>
@@ -35,27 +36,27 @@
         <p id="display"></p>
     </div>
         <div id="botoes">
-            <button class ="botoes" id="num1" onclick="check();addSoma();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">+</div></button>
-            <button class ="botoes" id="num2" onclick="check();addSub();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">-</div></button>
-            <button class ="botoes" id="num3" onclick="check();addMult();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">X</div></button>
-            <button class ="botoes" id="num4" onclick="check();addDiv();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">÷</div></button>
+            <button class ="botoes" id="num1" onclick="check();addSoma();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">+</div></button>
+            <button class ="botoes" id="num2" onclick="check();addSub();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">-</div></button>
+            <button class ="botoes" id="num3" onclick="check();addMult();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">X</div></button>
+            <button class ="botoes" id="num4" onclick="check();addDiv();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">÷</div></button>
 
-            <button class ="botoes" id="num5" onclick="check();addUm();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">1</div></button>
-            <button class ="botoes" id="num6" onclick="check();addDois();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">2</div></button>
-            <button class ="botoes" id="num7" onclick="check();addTres();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">3</div></button>
-            <button class ="botoes" id="num8" onclick="check();addZero();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">0</div></button>
+            <button class ="botoes" id="num5" onclick="check();addUm();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">1</div></button>
+            <button class ="botoes" id="num6" onclick="check();addDois();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">2</div></button>
+            <button class ="botoes" id="num7" onclick="check();addTres();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">3</div></button>
+            <button class ="botoes" id="num8" onclick="check();addZero();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">0</div></button>
 
-            <button class ="botoes" id="num9" onclick="check();addQuatro();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">4</div></button>
-            <button class ="botoes" id="num10" onclick="check();addCinco();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">5</div></button>
-            <button class ="botoes" id="num11" onclick="check();addSeis();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">6</div></button>
-            <button class ="botoes" id="num12" onclick="Clear();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">C</div></button>
+            <button class ="botoes" id="num9" onclick="check();addQuatro();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">4</div></button>
+            <button class ="botoes" id="num10" onclick="check();addCinco();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">5</div></button>
+            <button class ="botoes" id="num11" onclick="check();addSeis();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">6</div></button>
+            <button class ="botoes" id="num12" onclick="Clear();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">C</div></button>
 
-            <button class ="botoes" id="num13" onclick="check();addSete();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">7</div></button>
-            <button class ="botoes" id="num14" onclick="check();addOito();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">8</div></button>
-            <button class ="botoes" id="num15" onclick="check();addNove();refresh()"><img draggable="false" src="botao.png" width="47px"><div id="textoBot">9</div></button>
-            <button class ="botoes" id="num16" onclick="check();Equal();refresh()"><img draggable="false" src="botao2.png" width="47px"><div id="textoBot">=</div></button>
+            <button class ="botoes" id="num13" onclick="check();addSete();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">7</div></button>
+            <button class ="botoes" id="num14" onclick="check();addOito();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">8</div></button>
+            <button class ="botoes" id="num15" onclick="check();addNove();refresh()"><img draggable="false" src="imagens/botao.png" width="47px"><div id="textoBot">9</div></button>
+            <button class ="botoes" id="num16" onclick="check();Equal();refresh()"><img draggable="false" src="imagens/botao2.png" width="47px"><div id="textoBot">=</div></button>
         </div>
-    <img id="Calculadora" draggable="false" src="calculadora.png">
+    <img id="Calculadora" draggable="false" src="imagens/calculadora.png">
 </div>
 
 <!--CODIFICADOR ======================================
