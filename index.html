@@ -69,11 +69,12 @@
                     <option>Selecione a linguagem</option>
                     <option value="base64">Base64</option>
                     <option value="cesar">Cifra de César</option>
+                    <option value="binario">Binário</option>
                 </select>
             </div>
             <textarea class="inputBox" id="codeBox"></textarea>
             <button id="sinal" class="sinal" style="display: none;" onclick="toggleCodeBut()">+</button>
-            <input type="number" min=-25 max=25 class="numBox" id="numBox" style="display: none;">
+            <input type="number" min=0 max=25 class="numBox" id="numBox" style="display: none;">
             <button id="codeBut" onclick="code()" class="decBotoes">Codificar</button>
         </div>
 
@@ -83,11 +84,12 @@
                     <option>Selecione a linguagem</option>
                     <option value="base64">Base64</option>
                     <option value="cesar">Cifra de César</option>
+                    <option value="binario">Binário</option>
                 </select>
             </div>
             <textarea type="text" class="inputBox" id="decodeBox"></textarea>
             <button id="decoSinal" class="sinal" style="display: none;" onclick="toggleDecodeBut()">+</button>
-            <input type="number" min=-25 max=25 class="numBox" id="decoNumBox" size="1" style="display: none;">
+            <input type="number" min=0 max=25 class="numBox" id="decoNumBox" size="1" style="display: none;">
             <button id=decodeBut onclick="decode()" class="decBotoes">Decodificar</button>
         </div>
     </div>

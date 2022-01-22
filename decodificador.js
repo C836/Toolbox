@@ -98,8 +98,25 @@ function code(){
     else if (codeTipo.value==="base64") {
         inputBox=document.getElementById("codeBox").value;        
         document.getElementById("decodeBox").value=btoa(inputBox)
-        document.getElementById("codeBox").value="" }
+        document.getElementById("codeBox").value="" } 
+
+    else if (codeTipo.value==="binario") {
+    inputBox=document.getElementById("codeBox").value;
+    inputSplit=inputBox.split("");
+        for (var i=0; i<inputSplit.length; i++){
+            passCode[i]=inputSplit[i].charCodeAt()
+            inputSplit[i]=(passCode[i].toString(2))
+        
+        if (inputSplit[i].length===6){inputSplit[i]="00"+inputSplit[i]}
+        else if (inputSplit[i].length===7){inputSplit[i]="0"+inputSplit[i]}
+        else if (inputSplit[i].length===8){continue}}
+
+            document.getElementById("decodeBox").value=inputSplit.join(" ")
+        }
     }
+    
+        
+
 
 /*DECODIFICAR*/
 function decode(){
@@ -132,4 +149,15 @@ function decode(){
         inputBox=document.getElementById("decodeBox").value;        
         document.getElementById("codeBox").value=atob(inputBox)
         document.getElementById("decodeBox").value="" }
+    
+    else if (document.getElementById("decodeTipo").value==="binario") {
+        inputBox=document.getElementById("decodeBox").value.replace(/ /g, "")
+        inputSplit=inputBox.match(/.{1,8}/g);
+            for (var i=0; i<inputSplit.length; i++){
+                inputSplit[i]=String.fromCharCode(parseInt(inputSplit[i], 2))
+            }  
+        document.getElementById("codeBox").value=inputSplit.join("")
+        document.getElementById("decodeBox").value="" }
     }
+    
+    /* teste 1542220i3casaa MAcaco zéZé ][Ç>;´:+:_)@!""|:?:{:_ */

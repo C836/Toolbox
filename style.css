@@ -8,7 +8,7 @@
 #caixa{width: 60%;position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);display:flex ;flex-wrap: wrap; flex-direction:row; justify-content: space-around;  background-color: rgba(0, 0, 0, 0.5); z-index: -10; border-radius: 50px; box-shadow:  0 0 3em rgba(0, 0, 0, 0.5)}
 .iconesMenu{display:flex; transform: scale(1);border-radius: 100%; min-width: 180px; height: 180px; justify-content: center; margin: 40px; box-shadow:  0 0 3em rgba(0, 0, 0, 1); cursor: pointer;}
 .iconInfo{position: absolute; opacity: 0; transition: All 0.2s;background-color: rgba(0, 0, 0, 0.7); border-radius: 50%; width: 180px; height: 180px;}
-    .infoText{font: 20px Roboto, sans-serif; color: white; text-align: center; padding-top: 70px; letter-spacing: 1px;}
+    .infoText{font: 20px Roboto, sans-serif; color: white; text-align: center; padding-top: 70px; letter-spacing: 1px; }
     .iconInfo:hover{opacity: 1}
 
 #circle1{width: 100vw; height: 100vw; position: fixed; z-index: -10; top: 50%; transform: translate(0, -50%) scale(0); border-radius: 100%; z-index: 4; min-height: 100%}
@@ -56,7 +56,7 @@
     .tipo{width:357px; padding: 8px; margin: 15px 15px 15px 15px; border-radius: 5px; font: 14px Roboto, sans-serif; background-color: rgba(0, 0, 0, 0.2); border: none; color: white;}
         option{background-color: #2d4d91;}
             
-    .inputBox{width: 357px; height:265px ;margin: 0 15px 15px 15px; resize: none; box-sizing: border-box; border-radius: 5px; background-color: rgba(0, 0, 0, 0.2); border: none; color: white; padding: 10px; font-size: 15px; }
+    .inputBox{width: 357px; height:265px ;margin: 0 15px 15px 15px; resize: none; box-sizing: border-box; border-radius: 5px; background-color: rgba(0, 0, 0, 0.2); border: none; color: white; padding: 10px; font-size: 16px; }
     .decBotoes{width: 357px; padding: 8px; margin: 0 15px 15px 15px; border-radius: 10px; font: 14px Roboto, sans-serif; border: none; cursor: pointer;} 
     .sinal{margin: 0 15px 15px 15px; padding: 8px; width: 36px; float: left; border-radius: 10px; cursor: pointer; border: none; background-color: rgba(0, 0, 0, 0.2); color: white;}
     .numBox{margin: 0 15px 15px 0; padding: 8px; display: inline-block; border-radius: 5px; border: none; width: 38px; background-color:rgba(0, 0, 0, 0.2); color: white; }
