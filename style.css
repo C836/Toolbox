@@ -47,7 +47,7 @@
     #num15{transform: translate(3%, 325%); border:none}
     #num16{transform: translate(108%, 325%); border:none}
 
-#divDecoder{background-color: rgba(0, 0, 0, 0.2); border-radius: 40px; position:absolute; width: 900px; height: 490px; margin:40px auto;margin-left: auto; margin-right: auto; left: 0; right: 0; z-index: 5; transform: scale(0.00); box-shadow:  0 0 3em black}
+#divDecoder{background-color: rgba(0, 0, 0, 0.2); border-radius: 40px; position:absolute; width: 900px; height: 490px; margin:40px auto;margin-left: auto; margin-right: auto; left: 0; right: 0; z-index: 5; transform: scale(0); box-shadow:  0 0 3em black}
 #decoderBox{width: 850px; height: 450px; margin: 25px}
 
 .divBox{width:387px; height: 400px; background-color:rgba(0, 0, 0, 0.2); padding: 5px; border-radius: 30px}
@@ -65,7 +65,7 @@
 
         @media (max-width: 900px){
             #decoderBox{width: 50px}
-            #divDecoder{height: 910px; width: 450px;}
+            #divDecoder{height: 910px; width: 450px; zoom: 75%;}
             #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
             #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 
@@ -76,7 +76,7 @@
 
     @media (max-width: 700px){
         #decoderBox{width: 50px}
-        #divDecoder{height: 910px; width: 450px; zoom: 75%;}
+        #divDecoder{height: 900px; width: 450px; zoom: 75%;}
         #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
         #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 
@@ -90,7 +90,7 @@
     }
 @media (max-width: 400px){
     #decoderBox{width: 50px}
-    #divDecoder{height: 910px; width: 450px; zoom: 65%;}
+    #divDecoder{height: 900px; width: 450px; zoom: 65%;}
     #divEsquerda{float:none ;margin: 15px 15px 0px 0px;}
     #divDireita{float:none ;margin: 35px 15px 0px 0px;}
 

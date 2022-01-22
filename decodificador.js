@@ -4,9 +4,9 @@ function abrirDecoder(){  /* ABRIR DO MENU (IGNORE)*/
     timeout=setTimeout(function(){document.getElementById('imgDecoder').style.cssText="opacity: 1"}, 500);
 }
 function fecharDecoder(){
-    document.getElementById('circle2').style.cssText = 'transform: translate(0, -53%) scale(0);transition: border-radius 0.4s,transform 0.4s; border-radius: 100%;background-color: #3964c0'
+    document.getElementById('circle2').style.cssText = 'transform: translate(0, -50%) scale(0);transition: border-radius 0.4s,transform 0.4s; border-radius: 100%;background-color: #3964c0'
     document.getElementById('imgDecoder').style.cssText="opacity:0;transition: opacity 0s;"  
-    document.getElementById('divDecoder').style.cssText = 'transform: scale(0);transition: all 0.4s;';
+    document.getElementById('divDecoder').style.cssText = 'opacity: 0;transform: scale(0);transition: all 0.4s; transform-origin: 50% 50%)';
     clearTimeout(timeout);
 }
 

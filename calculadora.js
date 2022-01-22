@@ -6,7 +6,7 @@ function abrirCalculadora(){
 function fecharCalculadora(){
     document.getElementById('circle1').style.cssText = 'transform: translate(0, -53%) scale(0);transition: border-radius 0.4s,transform 0.4s; border-radius: 100%;background-color: rgb(189, 189, 189)'
     document.getElementById('imgCalc').style.cssText="opacity:0;transition: opacity 0s;"  
-    document.getElementById('divCalculadora').style.cssText = 'transform: scale(0);transition: all 0.4s;';
+    document.getElementById('divCalculadora').style.cssText = 'opacity: 0;transform: scale(0);transition: all 0.4s;';
     clearTimeout(timeout);
 }
 
