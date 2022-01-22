@@ -80,6 +80,7 @@ function code(){
 
             for (var i=0; i<inputSplit.length; i++){ /*LOOP*/
                 if (inputSplit[i]===" "){resultArray.push(" ");continue}  /* SE O CARACTERE SELECIONADO FOR ESPAÇO, VAI IGNORAR E IR PARA O PRÓXIMO ELEMENTO*/
+                else if (tabela.indexOf(inputSplit[i])<0){continue}
                 else {
                     passCode[i]=tabela.indexOf(inputSplit[i]) /* SE NAO FOR ESPAÇO, VAI PROCURAR O CARACTERE SELECIONADO NA TABELA E ARMAZENAR SUA POSIÇÃO NUMA VARIAVEL*/
                     /*Mais*/
@@ -130,17 +131,18 @@ function decode(){
 
             for (var i=0; i<inputSplit.length; i++){
                 if (inputSplit[i]===" "){resultArray.push(" ");continue} 
-                else {
-                    passCode[i]=tabela.indexOf(inputSplit[i])
-                    /*Mais*/
-                if (decoSinal.innerHTML==="+"){
-                    if (passCode[i]+decodeNumBox>25){inputSplit[i]=tabela[passCode[i]+decodeNumBox-26]; continue}
-                        else {inputSplit[i]=tabela[passCode[i]+decodeNumBox]}
-                    }
-                    /*Menos*/
-                else if (decoSinal.innerHTML==="-"){
-                    if (passCode[i]-decodeNumBox<0){inputSplit[i]=tabela[passCode[i]-decodeNumBox+26]; continue}
-                        else {inputSplit[i]=tabela[passCode[i]-decodeNumBox]}}}}
+                else if (tabela.indexOf(inputSplit[i])<0){continue}
+                    else {
+                        passCode[i]=tabela.indexOf(inputSplit[i])
+                        /*Mais*/
+                    if (decoSinal.innerHTML==="+"){
+                        if (passCode[i]+decodeNumBox>25){inputSplit[i]=tabela[passCode[i]+decodeNumBox-26]; continue}
+                            else {inputSplit[i]=tabela[passCode[i]+decodeNumBox]}
+                        }
+                        /*Menos*/
+                    else if (decoSinal.innerHTML==="-"){
+                        if (passCode[i]-decodeNumBox<0){inputSplit[i]=tabela[passCode[i]-decodeNumBox+26]; continue}
+                            else {inputSplit[i]=tabela[passCode[i]-decodeNumBox]}}}}
 
             document.getElementById("codeBox").value=inputSplit.join("")
             document.getElementById("decodeBox").value="" }
