@@ -113,6 +113,7 @@ function code(){
         else if (inputSplit[i].length===8){continue}}
 
             document.getElementById("decodeBox").value=inputSplit.join(" ")
+            document.getElementById("codeBox").value=""
         }
     }
     
